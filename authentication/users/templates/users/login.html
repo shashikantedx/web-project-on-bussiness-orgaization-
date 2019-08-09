@@ -1,0 +1,40 @@
+{% extends "users/base.html" %}
+
+{% block body %}
+{% if message %}
+    <div>
+        {{ message }}
+    </div>
+{% endif %}
+<form action="{% url 'login' %}" method="post" class="align-items-center">
+    {% csrf_token %}
+     <div class="container-fluid bg">
+  <div class="row">
+  <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <form class="form-container form-inline abd">
+        <form class="form-container abd">
+      	{% load static %}
+		<img src="{% static "images/heart.jpeg" %}"  class="abcd" alt="My image">
+        <h1>login to business update</h1>
+          <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+         <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Remember me</label>
+          </div>
+          <button type="submit" class="btn btn-success btn-block">Submit</button>
+          </form>
+      </form> 
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12"></div>
+  </div>
+</div>
+   </form>
+   <link rel="stylesheet" type="text/css" href="/static/users/css/.css">
+{% endblock %}
